@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+	  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	  
+	  <title>Frontend Mentor | Results summary component</title>
+
+	  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	  <style>
+		@font-face{
+			font-family: hanken_grotesk;
+			src: url('./assets/fonts/static/HankenGrotesk-Medium.ttf');
+		}
+		body{
+			font-family: hanken_grotesk;
+			font-size: 18px;
+		}
+		.container{
+			display: flex;
+			background-color: hsl(0,0%,100%);
+		}
+		#right-inner-container{
+			display: flex;
+			flex-flow: column wrap;
+			background-image: linear-gradient(hsl(252,100%,67%),hsl(241, 81%, 54%));
+			text-align: center;
+			align-items: center;
+		}
+		h1{
+			color: hsl(221, 100%, 96%);
+			font-size: 18px;
+			padding-bottom: 1.5vh;
+		}
+		#circle{
+			display: flex;
+			flex-flow: column wrap;
+			background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%,46%,0));
+			border-radius: 50%;
+			width: 160px;
+			height: 160px;
+		}
+		#avg{
+			color: hsl(0, 0%, 100%);
+			font-size: 60px;
+			padding-top: 36px;
+			font-weight: bold;
+		}
+		#main-score{
+			color: hsl(0, 0%, 100%);
+			padding-top: 30px;
+			font-size: 25px;
+			font-weight: bold;
+		}
+		#percent-people{
+			color: hsl(221, 100%, 96%);
+			padding: 10px 40px 0px 40px;
+			text-align: center;
+		}
+		#left-inner-container{
+			margin: 10px 30px 0px 30px;
+			display: flex;
+			flex-flow: column wrap;
+			gap: 18px;
+		}
+		h2{
+			font-size: 18px;
+		}
+		.gray_blue{
+			color: hsl(224, 30%, 27%);
+		}
+		.light_lavender{
+			color: hsl(241, 100%, 89%);
+		}
+		.summary{
+			height: 55px;
+			font-size: 16px;
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+		}
+		.reaction{
+			background-color: hsla(0, 100%, 67%, 5%);
+		}
+		.memory{
+			background-color: hsla(39, 100%, 56%, 5%);
+		}
+		.verbal{
+			background-color: hsla(166, 100%, 37%, 5%);
+		}
+		.visual{
+			background-color: hsla(234, 85%, 45%, 5%);
+		}
+		.reaction_text{
+			color: hsl(0, 100%, 67%);
+		}
+		.memory_text{
+			color: hsl(39, 100%, 56%);
+		}
+		.verbal_text{
+			color: hsl(166, 100%, 37%);
+		}
+		.visual_text{
+			color: hsl(234, 85%, 45%);
+		}
+		.padding_text{
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		.margin_left{
+			margin-left: auto;
+		}
+		.padding_left{
+			padding-right: 10px;
+		}
+		.border_corners{
+		}
+		#continue{
+			background-color: hsl(224,30%,27%);
+			color: hsl(0,0%,100%);
+			border-radius: 40px;
+			height: 55px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#continue:hover, #continue:active{
+			background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%))
+		}
+		@media screen and (max-width: 390px){
+			body{
+				margin: 0;
+			}
+			.container{
+				width: 100%;
+				flex-flow: column;
+			}
+			#right-inner-container{
+				border-radius: 0px 0px 30px 30px;
+				height: 44vh;
+			}
+		}
+		@media screen and (min-width: 391px){
+			body{
+				padding-top: 10%;
+			}
+			.container{
+				margin: auto;
+				width: 660px;
+				height: 460px;
+				box-shadow: 15px 15px 15px hsl(241, 100%, 89%);
+				border-radius: 30px;
+			}
+			#right-inner-container{
+				width: 350px;
+				border-radius: 30px;
+				padding: 1.8vh;
+				
+			}
+			#percent-people{
+				padding: 0px 10px 0px 10px;
+				padding-top: 20px;
+			}
+			#left-inner-container{
+				width: 350px;
+			}
+		}
+		.attribution { font-size: 11px; text-align: center; }
+		.attribution a { color: hsl(228, 45%, 44%); }
+	  </style>
+	</head>
+	<body>
+		<main class = 'container'>
+			<div id = 'right-inner-container'>
+				<h1> Your Result </h1>
+					<section id = 'circle'>
+						<span id = 'avg'> 76 </span>
+						<br>
+						<span id = 'ovrall' class = 'light_lavender'> of 100 </span>
+					</section>
+					<span id = 'main-score'> Great </span>
+					<span id = 'percent-people'> You scored higher than 65% of the people who have taken these tests.</span>
+			</div>
+			<div id = 'left-inner-container'>
+				<h2 class='gray_blue'> Summary </h2>
+				<section class = 'summary reaction padding_text border_corners'>
+					<img class = 'padding_left' src = './assets/images/icon-reaction.svg' width= 25px>
+					<span class = 'padding_left reaction_text'> 
+						Reaction
+					</span>
+					<span class = 'margin_left padding_left gray_blue'>
+						80 
+					</span>
+					<span class = 'light_lavender'>
+						/ 100
+					</span>
+				</section>
+				<section class = 'summary memory padding_text border_corners'>
+					<img class = 'padding_left' src = './assets/images/icon-memory.svg' width= 25px>
+					<span class = 'padding_left memory_text'>
+						Memory
+					</span>
+					<span class = 'margin_left padding_left gray_blue'>
+						92
+					</span>
+					<span class = 'light_lavender'>
+						/ 100
+					</span>
+				</section>
+				<section class = 'summary verbal padding_text border_corners'>
+					<img class = 'padding_left' src = './assets/images/icon-verbal.svg' width= 25px>
+					<span class = 'padding_left verbal_text'>
+						Verbal
+					</span>
+					<span class = 'margin_left padding_left gray_blue'>
+						61 
+					</span>
+					<span class = 'light_lavender'>
+						/ 100
+					</span>
+				</section>
+				<section class = 'summary visual padding_text border_corners'>
+					<img class = 'padding_left' src = './assets/images/icon-visual.svg' width= 25px>
+					<span class = 'padding_left visual_text'>
+						Visual
+					</span>
+					<span class = 'margin_left padding_left gray_blue'>
+						72 
+					</span>
+					<span class = 'light_lavender'>
+						/ 100
+					</span>
+				</section>
+				<div id = 'continue'>
+					Continue
+				</div>
+			</div>
+		</main>
+	  <div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+		Coded by <a href="#">Awilixsh</a>.
+	  </div>
+	<script>
+	</script>
+	</body>
+</html>
